@@ -1,0 +1,16 @@
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\bin\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.deps.json
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\bin\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.runtimeconfig.json
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\bin\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.dll
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\bin\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.pdb
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.csproj.AssemblyReference.cache
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.AssemblyInfoInputs.cache
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.AssemblyInfo.cs
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.csproj.CoreCompileInputs.cache
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.sourcelink.json
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.dll
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\refint\Amiasea.Enterprise.Data.Migration.Design.dll
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.pdb
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.genruntimeconfig.cache
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\ref\Amiasea.Enterprise.Data.Migration.Design.dll
+C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\obj\Release\net11.0\Amiasea..BFDA82BB.Up2Date

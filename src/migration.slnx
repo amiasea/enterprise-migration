@@ -1,0 +1,6 @@
+<Solution>
+	<Folder Name="/migration/">
+		<Project Path="Amiasea.Enterprise.Data.Migration.Core/Amiasea.Enterprise.Data.Migration.Core.csproj" />
+		<Project Path="Amiasea.Enterprise.Data.Migration.Design/Amiasea.Enterprise.Data.Migration.Design.csproj" />
+	</Folder>
+</Solution>

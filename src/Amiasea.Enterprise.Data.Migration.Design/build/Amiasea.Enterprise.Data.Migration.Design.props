@@ -1,0 +1,7 @@
+<ItemGroup>
+  <AssemblyAttribute Include="Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute">
+    <_Parameter1>
+      Amiasea.Enterprise.Data.Migration.Design.MigrationDesignTimeServices, Amiasea.Enterprise.Data.Migration.Design
+    </_Parameter1>
+  </AssemblyAttribute>
+</ItemGroup>

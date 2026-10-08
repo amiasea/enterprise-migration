@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Amiasea.Enterprise.Data.Migration.Design</id>
+    <version>1.0.0</version>
+    <authors>Amiasea.Enterprise.Data.Migration.Design</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="48bc1e7fb5f24a4a81620d8aeb12993e248521cd" />
+    <dependencies>
+      <group targetFramework="net11.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\bin\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.runtimeconfig.json" target="lib\net11.0\Amiasea.Enterprise.Data.Migration.Design.runtimeconfig.json" />
+    <file src="C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\bin\Release\net11.0\Amiasea.Enterprise.Data.Migration.Design.dll" target="lib\net11.0\Amiasea.Enterprise.Data.Migration.Design.dll" />
+    <file src="C:\repos\amiasea-enterprise-solution\migration\src\Amiasea.Enterprise.Data.Migration.Design\build\Amiasea.Enterprise.Data.Migration.Design.props" target="build\Amiasea.Enterprise.Data.Migration.Design.props" />
+  </files>
+</package>

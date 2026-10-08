@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: Migration release version
+        required: true
+        type: string
+
+      artifact_id:
+        description: ID of the migration bundles artifact
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 1
+
+      - name: Download migration bundles
+        uses: actions/download-artifact@v8.0.2
+        with:
+          artifact-ids: ${{ inputs.artifact_id }}
+          path: artifacts/bundles
+
+      - name: Build migration image
+        run: |
+          docker build \
+            --tag "amiasea-enterprise-migration:${{ inputs.version }}" \
+            .

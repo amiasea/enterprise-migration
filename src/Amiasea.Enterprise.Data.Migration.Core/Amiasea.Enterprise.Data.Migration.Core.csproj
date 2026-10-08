@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\data\core\Amiasea.Enterprise.Data.Core\Amiasea.Enterprise.Data.Core.csproj" />
+    <ProjectReference Include="..\Amiasea.Enterprise.Data.Migration.Design\Amiasea.Enterprise.Data.Migration.Design.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="11.0.0-rc.1.26425.128">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive; compile</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+    <PackageReference Include="Amiasea.Enterprise.Data.Migration.Design"
+                  Version="1.0.0"
+                  PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

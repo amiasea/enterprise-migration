@@ -1,0 +1,65 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - '*-development'
+    tags:
+      - 'v*'
+
+jobs:
+  validate-release:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Validate release tag
+        shell: pwsh
+        env:
+          TAG_NAME: ${{ github.ref_name }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          if ($env:TAG_NAME -notmatch '^v\d+\.\d+\.\d+$') {
+            throw "Release tag '$env:TAG_NAME' is not a semantic version tag. Expected vX.Y.Z."
+          }
+
+          $branches = @(
+            git for-each-ref `
+              --format='%(refname:short) %(objectname)' `
+              refs/remotes/origin
+          ) | Where-Object {
+            $_ -match '^origin/.+-main (?<sha>[0-9a-f]+)$' -and
+            $Matches['sha'] -eq $env:COMMIT_SHA
+          }
+
+          if ($branches.Count -eq 0) {
+            throw "Release tag '$env:TAG_NAME' does not point to the tip of a *-main branch."
+          }
+
+          Write-Host "Release tag: $env:TAG_NAME"
+          Write-Host "Tagged commit: $env:COMMIT_SHA"
+          Write-Host "Main branch:"
+          $branches | ForEach-Object { Write-Host "  $_" }
+
+  build-development:
+    if: startsWith(github.ref, 'refs/heads/') &&
+        endsWith(github.ref_name, '-development')
+    uses: ./.github/workflows/build.yml
+
+  build-release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: validate-release
+    uses: ./.github/workflows/build.yml
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build-release
+    uses: ./.github/workflows/release.yml
+    with:
+      version: ${{ github.ref_name }}
+      artifact_id: ${{ needs.build-release.outputs.artifact_id }}

@@ -1,0 +1,82 @@
+name: Build
+
+on:
+  workflow_call:
+    outputs:
+      artifact_id:
+        description: ID of the migration bundles artifact
+        value: ${{ jobs.build.outputs.artifact_id }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact-id }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: '11.0.x'
+
+      - name: Restore tools
+        run: dotnet tool restore
+
+      - name: Restore
+        run: dotnet restore migration.slnx
+
+      - name: Build
+        run: dotnet build migration.slnx --configuration Release --no-restore
+
+      - name: Build migration bundles
+        shell: pwsh
+        run: |
+          $projects = @(Get-ChildItem `
+            -Path "src" `
+            -Filter "*.csproj" `
+            -Recurse)
+
+          if ($projects.Count -eq 0) {
+            throw "No migration projects found."
+          }
+
+          New-Item -ItemType Directory -Force -Path "artifacts/bundles" | Out-Null
+
+          foreach ($project in $projects) {
+            Write-Host "Processing migration project: $($project.FullName)"
+
+            dotnet ef migrations has-pending-model-changes `
+              --project $project.FullName
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "Migration model check failed for $($project.FullName)."
+            }
+
+            $name = $project.BaseName
+            $output = "artifacts/bundles/$name"
+
+            dotnet ef migrations bundle `
+              --project $project.FullName `
+              --output $output `
+              --configuration Release `
+              --no-build `
+              --no-restore
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "Migration bundle failed for $($project.FullName)."
+            }
+          }
+
+      - name: Upload migration bundles
+        id: upload
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: migration-bundles
+          path: artifacts/bundles/
+          if-no-files-found: error
