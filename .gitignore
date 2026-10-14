@@ -1,0 +1,68 @@
+# .NET build output
+
+**/bin/
+**/obj/
+
+# Generated package artifacts
+
+/packages/
+**/packages/
+*.nupkg
+*.snupkg
+
+# Test and coverage output
+
+**/TestResults/
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# IDE and editor files
+
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet local caches and generated files
+
+.nuget/
+*.nuget.g.props
+*.nuget.g.targets
+
+# Logs and temporary files
+
+*.log
+*.tmp
+*.temp
+*.bak
+
+# OS-generated files
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local environment and secrets
+
+.env
+.env.*
+!.env.example
+secrets.json
+**/secrets.json
+*.pfx
+*.p12
+
+# Publish and deployment output
+
+**/publish/
+artifacts/
+
+# Generated NuGet packages
+/packages/
+*.nupkg
+*.snupkg

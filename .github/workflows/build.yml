@@ -40,7 +40,10 @@ jobs:
           $projects = @(Get-ChildItem `
             -Path "src" `
             -Filter "*.csproj" `
-            -Recurse)
+            -Recurse |
+            Where-Object {
+              $_.Name -ne "Amiasea.Enterprise.Data.Migration.Design.csproj"
+            })
 
           if ($projects.Count -eq 0) {
             throw "No migration projects found."

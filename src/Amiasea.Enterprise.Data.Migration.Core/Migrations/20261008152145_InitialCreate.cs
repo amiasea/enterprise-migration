@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Amiasea.Enterprise.Data.Migration.Core.Migrations;
 
 /// <inheritdoc />
-public partial class _20261008150046_InitialCreate : Migration
+public partial class _20261008152145_InitialCreate : Microsoft.EntityFrameworkCore.Migrations.Migration
 {
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)

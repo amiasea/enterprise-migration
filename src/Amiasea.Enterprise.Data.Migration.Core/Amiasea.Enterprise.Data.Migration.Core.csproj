@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\data\core\Amiasea.Enterprise.Data.Core\Amiasea.Enterprise.Data.Core.csproj" />
-    <ProjectReference Include="..\Amiasea.Enterprise.Data.Migration.Design\Amiasea.Enterprise.Data.Migration.Design.csproj" />
+    <ProjectReference Include="..\..\..\data\core\src\Amiasea.Enterprise.Data.Core\Amiasea.Enterprise.Data.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Amiasea.Enterprise.Data.Migration.Core.Migrations;
 
 [DbContext(typeof(CoreDbContext))]
-[Migration("20261008150046_InitialCreate")]
-partial class _20261008150046_InitialCreate
+[Migration("20261008152145_InitialCreate")]
+partial class _20261008152145_InitialCreate
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)
